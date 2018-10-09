@@ -56,7 +56,7 @@ def setText(aString):
     win32api.keybd_event(86, 0, win32con.KEYEVENTF_KEYUP, 0)
     win32api.keybd_event(8, 0, 0, 0)
     win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
-    time.sleep(0.2)
+    time.sleep(0.5)
     win32api.keybd_event(17, 0, 0, 0)
     win32api.keybd_event(90, 0, 0, 0)
     time.sleep(0.4)
@@ -468,7 +468,7 @@ def send_ad(qq_ned):
             if i==5:
                 return
             else:
-                time.sleep(0.5 * i)
+                time.sleep(0.3 * i)
                 pass
         else:
             mov(move[0] + 30, move[1] + 40)
