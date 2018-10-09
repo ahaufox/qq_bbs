@@ -2,8 +2,8 @@
 import requests
 import time
 import sqlite3
-import json
-
+from bs4 import BeautifulSoup
+import re
 
 def get_cookies(username,password):
     url = 'http://bbs.21ic.com/member.php'
@@ -69,4 +69,25 @@ cookies={}
 cookie=get_cookies(username,password)
 res=requests.get('http://bbs.21ic.com/home.php', cookies=cookie).content
 res=str(res, encoding='utf-8')
-print(res)
+
+def get_text(text):
+    text=re.sub('\n','',text)
+    text = re.sub('<[^>]+>', '', text)
+    return text
+soup = BeautifulSoup(res, "html.parser")
+all_a=soup.select('a')
+all_href_a=[]
+for i in range(0,len(all_a)):
+    if all_a[i].get('href')==None:
+        pass
+    else:
+        all_href_a.append(all_a[i].get('href'))
+all_href_b=[]
+for i in range(0,len(all_href_a)):
+    if all_href_a[i][0:30] =='http://bbs.21ic.com/space-uid-':
+       all_href_b.append(all_href_a[i])
+    else:
+        pass
+
+print(all_href_b)
+print(len(all_href_b))
