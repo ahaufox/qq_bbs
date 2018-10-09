@@ -54,8 +54,9 @@ def setText(aString):
     time.sleep(0.4)
     win32api.keybd_event(17, 0, win32con.KEYEVENTF_KEYUP, 0)
     win32api.keybd_event(86, 0, win32con.KEYEVENTF_KEYUP, 0)
+    #粘贴完成
+
     win32api.keybd_event(8, 0, 0, 0)
-    time.sleep(0.4)
     win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
     time.sleep(0.2)
     win32api.keybd_event(17, 0, 0, 0)
