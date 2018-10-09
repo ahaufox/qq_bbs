@@ -59,6 +59,7 @@ def setText(aString):
     win32api.keybd_event(8, 0, 0, 0)
     win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
     time.sleep(0.2)
+    #退格完成
     win32api.keybd_event(17, 0, 0, 0)
     win32api.keybd_event(90, 0, 0, 0)
     time.sleep(0.4)
