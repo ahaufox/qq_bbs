@@ -57,7 +57,7 @@ def setText(aString):
     win32api.keybd_event(8, 0, 0, 0)
     time.sleep(0.4)
     win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
-    time.sleep(0.5)
+    time.sleep(0.2)
     win32api.keybd_event(17, 0, 0, 0)
     win32api.keybd_event(90, 0, 0, 0)
     time.sleep(0.4)
