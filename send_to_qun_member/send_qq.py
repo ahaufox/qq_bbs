@@ -469,7 +469,7 @@ def send_ad(qq_ned):
             if i==5:
                 return
             else:
-                time.sleep(0.3 * i)
+                time.sleep(0.2 * i)
                 pass
         else:
             mov(move[0] + 30, move[1] + 40)
