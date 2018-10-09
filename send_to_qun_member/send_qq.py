@@ -54,6 +54,14 @@ def setText(aString):
     time.sleep(0.4)
     win32api.keybd_event(17, 0, win32con.KEYEVENTF_KEYUP, 0)
     win32api.keybd_event(86, 0, win32con.KEYEVENTF_KEYUP, 0)
+    win32api.keybd_event(8, 0, 0, 0)
+    win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
+    time.sleep(0.2)
+    win32api.keybd_event(17, 0, 0, 0)
+    win32api.keybd_event(90, 0, 0, 0)
+    time.sleep(0.4)
+    win32api.keybd_event(17, 0, win32con.KEYEVENTF_KEYUP, 0)
+    win32api.keybd_event(90, 0, win32con.KEYEVENTF_KEYUP, 0)
     return
 
 
@@ -455,12 +463,12 @@ def send_ad(qq_ned):
     # 检测QQ是否找到
     time.sleep(0.2)
     for i in range(0,6):
-        time.sleep(0.1*i)
         move = matchImg('other_friend.png')
         if move==1:
             if i==5:
                 return
             else:
+                time.sleep(0.5 * i)
                 pass
         else:
             mov(move[0] + 30, move[1] + 40)
@@ -470,14 +478,14 @@ def send_ad(qq_ned):
     # 随机取需要发送的内容
     content = get_post_content()
     for i in range(1,5):
-        time.sleep(0.1*i)
         move = matchImg('left.png')
         if move==1:
+            time.sleep(0.1 * i)
             pass
         else:
             block()
             mov(move[0],move[1])
-            time.sleep(1.5)
+            time.sleep(0.5)
             left_c()
             disblock()
             break
@@ -487,18 +495,21 @@ def send_ad(qq_ned):
     time.sleep(0.2)
     win32api.keybd_event(13, 0, win32con.KEYEVENTF_KEYUP, 0)  # Realiz
     is_ok()
-    move = matchImg('shout_down.png')
-    time.sleep(0.5)
-    block()
-    x, y = pag.position()
-    mov(move[0], move[1])
-    left_c()
-    mov(x, y)
-    disblock()
+    for i in range(1,5):
+        move = matchImg('shout_down.png')
+        if move==1:
+            time.sleep(0.1 * i)
+            pass
+        else:
+            block()
+            mov(move[0],move[1])
+            time.sleep(0.5)
+            left_c()
+            disblock()
+            break
     rember_post(content, int(time.time()), qq_ned)
     print(qq_ned)
     return
-
 
 def send_qq(qq_id,times):
     time.sleep(1)
@@ -512,9 +523,9 @@ def send_qq(qq_id,times):
             send_ad(qq_ned)
     return 'all down!'
 #check_cookies(547575116)
-update_qun_and_qq(547575116)
+#update_qun_and_qq(547575116)
 #insert_all_qq(547575116)
-#send_qq(452193182, 5000)
+send_qq(452193182, 5000)
 
 # for i in range(0,10):
 #     try:
