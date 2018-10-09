@@ -522,15 +522,15 @@ def send_qq(qq_id,times):
         else:
             send_ad(qq_ned)
     return 'all down!'
-#check_cookies(547575116)
+check_cookies(547575116)
 #update_qun_and_qq(547575116)
 #insert_all_qq(547575116)
 #send_qq(452193182, 5000)
-
-for i in range(0,10):
-    try:
-        send_qq(452193182,5000)
-    except:
-        print ("err")
-    else:
-        send_qq(452193182, 5000)
+#
+# for i in range(0,10):
+#     try:
+#         send_qq(452193182,5000)
+#     except:
+#         print ("err")
+#     else:
+#         send_qq(452193182, 5000)

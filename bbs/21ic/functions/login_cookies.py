@@ -64,7 +64,7 @@ def get_cookies(username,password):
 
 username='黄黄'
 password='ds1234567890'
-cookies={}
+
 
 cookie=get_cookies(username,password)
 res=requests.get('http://bbs.21ic.com/home.php', cookies=cookie).content
@@ -90,4 +90,3 @@ for i in range(0,len(all_href_a)):
         pass
 
 print(all_href_b)
-print(len(all_href_b))
