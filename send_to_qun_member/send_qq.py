@@ -344,12 +344,12 @@ def get_member_id(qun_id):
                 pass
             else:
                 uin = member_list[i]['uin']
-                sql = 'insert into qq_send_send set qq_id={},from_qq={}'.format(uin, qq_id)
+                sql = """insert into qq_send_send set qq_id={},from_qq={}""".format(uin, qq_id)
                 mysql_local_update_insert(sql)
     return
 
 def insert_all_qq(qq_id):
-    sql='select qun_id from qq_send_qun where down=0 and from_qq={}'.format(qq_id)
+    sql="""select qun_id from qq_send_qun where down=0 and from_qq={}""".format(qq_id)
     res=mysql_local_select(sql)
     if res==():
         return 'nothing to do'
