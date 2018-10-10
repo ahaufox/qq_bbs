@@ -16,17 +16,18 @@ from ctypes import *
 import pyautogui as pag
 #############base functions##################
 #匹配图片
-def matchImg(imgsrc, confidencevalue=0.95):
+def matchImg(imgsrc, confidence=0.9):
     im = ImageGrab.grab()
     x='cap.png'
     im.save(x, 'png')
     imsrc = ac.imread(imgsrc)
     imobj = ac.imread(x)
-    match_result = ac.find_template(imsrc, imobj)
+    match_result = ac.find_template(imsrc, imobj,confidence)
     if match_result is not None:
         match_result['shape'] = (imsrc.shape[1], imsrc.shape[0])  # 0为高，1为宽
         match_result['click']=(int(match_result['rectangle'][0][0]+match_result['shape'][0]/2),int(match_result['rectangle'][0][1]+match_result['shape'][1]/2))
         mov = match_result['click']
+        # print(match_result['confidence'])
         return mov
     else:
         return 1
