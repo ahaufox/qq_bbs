@@ -177,10 +177,8 @@ def mysql_local_update_insert(sql):
             return 1
 
 def mov(m,n):
-    block()
     win32api.SetCursorPos([m, n])
     left_c()
-    disblock()
 
 #判断特定id的cookies是否有效
 #若无效：提示原因并更新
@@ -424,11 +422,9 @@ def is_ok():
             pass
         else:
             x, y = pag.position()
-            block()
             mov(m1[0], m1[1])
             left_c()
             mov(x,y)
-            disblock()
     m2=matchImg('dis_alow.png')
     if m2==1:
         pass
@@ -438,11 +434,9 @@ def is_ok():
             pass
         else:
             x, y = pag.position()
-            block()
             mov(m2[0], m2[1])
             left_c()
             mov(x, y)
-            disblock()
     m3=matchImg('add.png')
     if m3==1:
         pass
@@ -452,11 +446,9 @@ def is_ok():
             pass
         else:
             x, y = pag.position()
-            block()
             mov(m3[0], m3[1])
             left_c()
             mov(x, y)
-            disblock()
     mov(xx,yy)
     return
 
@@ -491,11 +483,10 @@ def send_ad(qq_ned):
             time.sleep(0.1 * i)
             pass
         else:
-            block()
             mov(move[0],move[1])
             time.sleep(0.2)
             left_c()
-            disblock()
+
             break
     setText(content)
     time.sleep(0.2)
@@ -509,11 +500,10 @@ def send_ad(qq_ned):
             time.sleep(0.1 * i)
             pass
         else:
-            block()
             mov(move[0],move[1])
             time.sleep(0.2)
             left_c()
-            disblock()
+
             break
     rember_post(content, int(time.time()), qq_ned)
     print(qq_ned)
