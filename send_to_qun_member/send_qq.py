@@ -487,6 +487,7 @@ def send_ad(qq_ned):
             time.sleep(0.2)
             left_c()
             break
+        print(1)
     setText(content)
     time.sleep(0.2)
     win32api.keybd_event(13, 0, 0, 0)  # 回车
