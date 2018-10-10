@@ -415,11 +415,11 @@ def update_qun_and_qq(qq_id):
 
 def is_ok():
     xx, yy = pag.position()
-    m1=matchImg('dai.png',1)
+    m1=matchImg('dai.png')
     if m1 == 1:
         pass
     else:
-        m1 = matchImg('cancel.png', 0.95)
+        m1 = matchImg('cancel.png')
         if m1==1:
             pass
         else:
@@ -429,11 +429,11 @@ def is_ok():
             left_c()
             mov(x,y)
             disblock()
-    m2=matchImg('dis_alow.png',1)
+    m2=matchImg('dis_alow.png')
     if m2==1:
         pass
     else:
-        m2 = matchImg('cancel.png',0.95)
+        m2 = matchImg('cancel.png')
         if m2==1:
             pass
         else:
@@ -443,11 +443,11 @@ def is_ok():
             left_c()
             mov(x, y)
             disblock()
-    m3=matchImg('add.png',1)
+    m3=matchImg('add.png')
     if m3==1:
         pass
     else:
-        m3 = matchImg('cancel.png',0.95)
+        m3 = matchImg('cancel.png')
         if m3==1:
             pass
         else:
