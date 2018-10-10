@@ -469,6 +469,10 @@ def send_ad(qq_ned):
         move = matchImg('other_friend.png')
         if move==1:
             if i==5:
+                for i in range(1,15):
+                    win32api.keybd_event(8, 0, 0, 0)
+                    win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
+                    time.sleep(0.2)
                 return
             else:
                 time.sleep(0.2 * i)
