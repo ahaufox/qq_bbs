@@ -488,9 +488,8 @@ def send_ad(qq_ned):
             left_c()
             break
     setText(content)
-    time.sleep(0.2)
     win32api.keybd_event(13, 0, 0, 0)  # 回车
-    time.sleep(0.2)
+    time.sleep(0.1)
     win32api.keybd_event(13, 0, win32con.KEYEVENTF_KEYUP, 0)  # Realiz
     is_ok()
     for i in range(1,5):
