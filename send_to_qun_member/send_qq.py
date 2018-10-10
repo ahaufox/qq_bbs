@@ -39,7 +39,7 @@ def left_c():
 # 左键双击
 def left_dc():
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP | win32con.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
-    time.sleep(0.2)
+    time.sleep(0.1)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP | win32con.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
     return
 
@@ -52,18 +52,18 @@ def setText(aString):
     w.CloseClipboard()
     win32api.keybd_event(17, 0, 0, 0)
     win32api.keybd_event(86, 0, 0, 0)
-    time.sleep(0.4)
+    time.sleep(0.1)
     win32api.keybd_event(17, 0, win32con.KEYEVENTF_KEYUP, 0)
     win32api.keybd_event(86, 0, win32con.KEYEVENTF_KEYUP, 0)
     #粘贴完成
 
     win32api.keybd_event(8, 0, 0, 0)
     win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
-    time.sleep(0.2)
+    time.sleep(0.1)
     #退格完成
     win32api.keybd_event(17, 0, 0, 0)
     win32api.keybd_event(90, 0, 0, 0)
-    time.sleep(0.4)
+    time.sleep(0.1)
     win32api.keybd_event(17, 0, win32con.KEYEVENTF_KEYUP, 0)
     win32api.keybd_event(90, 0, win32con.KEYEVENTF_KEYUP, 0)
     return
@@ -465,7 +465,7 @@ def send_ad(qq_ned):
     show('QQ')
     setText(qq_ned)
     # 检测QQ是否找到
-    time.sleep(0.2)
+    time.sleep(0.1)
     for i in range(0,6):
         move = matchImg('other_friend.png')
         if move==1:
@@ -473,14 +473,14 @@ def send_ad(qq_ned):
                 for i in range(1,15):
                     win32api.keybd_event(8, 0, 0, 0)
                     win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
-                    time.sleep(0.2)
+                    time.sleep(0.1)
                 return
             else:
-                time.sleep(0.2 * i)
+                time.sleep(0.3 * i)
                 pass
         else:
             mov(move[0] + 30, move[1] + 40)
-            time.sleep(0.2)
+            time.sleep(0.1)
             left_dc()
             break
     # 随机取需要发送的内容
@@ -493,7 +493,7 @@ def send_ad(qq_ned):
         else:
             block()
             mov(move[0],move[1])
-            time.sleep(0.5)
+            time.sleep(0.2)
             left_c()
             disblock()
             break
@@ -511,7 +511,7 @@ def send_ad(qq_ned):
         else:
             block()
             mov(move[0],move[1])
-            time.sleep(0.5)
+            time.sleep(0.2)
             left_c()
             disblock()
             break
