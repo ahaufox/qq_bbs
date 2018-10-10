@@ -178,7 +178,6 @@ def mysql_local_update_insert(sql):
 
 def mov(m,n):
     win32api.SetCursorPos([m, n])
-    left_c()
 
 #判断特定id的cookies是否有效
 #若无效：提示原因并更新
@@ -478,6 +477,7 @@ def send_ad(qq_ned):
     # 随机取需要发送的内容
     content = get_post_content()
     for i in range(1,5):
+        print('i=',i)
         move = matchImg('left.png')
         if move==1:
             time.sleep(0.1 * i)
@@ -487,7 +487,6 @@ def send_ad(qq_ned):
             time.sleep(0.2)
             left_c()
             break
-        print(1)
     setText(content)
     time.sleep(0.2)
     win32api.keybd_event(13, 0, 0, 0)  # 回车
