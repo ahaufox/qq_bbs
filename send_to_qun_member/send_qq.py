@@ -477,7 +477,7 @@ def send_ad(qq_ned):
             break
     # 随机取需要发送的内容
     content = get_post_content()
-    for i in range(1,5):
+    for i in range(,5):
         move = matchImg('left.png')
         if move==1:
             time.sleep(0.1 * i)
@@ -486,7 +486,6 @@ def send_ad(qq_ned):
             mov(move[0],move[1])
             time.sleep(0.2)
             left_c()
-
             break
     setText(content)
     time.sleep(0.2)
