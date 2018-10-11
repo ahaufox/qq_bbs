@@ -465,6 +465,7 @@ def send_ad(qq_ned):
                     win32api.keybd_event(8, 0, 0, 0)
                     win32api.keybd_event(8, 0, win32con.KEYEVENTF_KEYUP, 0)
                     time.sleep(0.1)
+                rember_post('QQ号无效', int(time.time()), qq_ned)
                 return
             else:
                 time.sleep(0.3 * i)
