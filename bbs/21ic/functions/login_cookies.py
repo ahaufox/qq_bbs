@@ -62,8 +62,8 @@ def get_cookies(username,password):
             re = cur.fetchone()
             return eval(re[0])
 
-username='黄黄'
-password='ds1234567890'
+username='斗石FAE'
+password='111111liu'
 
 
 cookie=get_cookies(username,password)
@@ -74,6 +74,7 @@ def get_text(text):
     text=re.sub('\n','',text)
     text = re.sub('<[^>]+>', '', text)
     return text
+
 soup = BeautifulSoup(res, "html.parser")
 all_a=soup.select('a')
 all_href_a=[]
@@ -85,8 +86,22 @@ for i in range(0,len(all_a)):
 all_href_b=[]
 for i in range(0,len(all_href_a)):
     if all_href_a[i][0:30] =='http://bbs.21ic.com/space-uid-':
-       all_href_b.append(all_href_a[i])
+       all_href_b.append(re.findall('[1-9][0-9]{3,}',all_href_a[i])[0])
     else:
         pass
 
-print(all_href_b)
+#print(all_href_b)
+
+def send_message(uid):
+    url='http://bbs.21ic.com/home.php?mod=spacecp&ac=pm&op=send&touid={}&inajax=1'.format(uid)
+    postData = {'pmsubmit': 'true',
+                'touid': '2746122',
+                'formhash': 'dfde7815',
+                'handlekey': 'showMsgBox',
+                'message': 1,
+                'messageappend': ''}
+    cookie = get_cookies(username, password)
+    res = requests.get(url, cookies=cookie,params=postData).content
+    res = str(res, encoding='utf-8')
+    return res
+print(send_message(2746122))
