@@ -410,7 +410,7 @@ def update_qun_and_qq(qq_id):
     get_qun_id(qq_id)
     insert_all_qq(qq_id)
 
-def is_ok():
+def is_ok(qq_ned):
     xx, yy = pag.position()
     m1=matchImg('dai.png')
     if m1 == 1:
@@ -435,6 +435,7 @@ def is_ok():
             x, y = pag.position()
             mov(m2[0], m2[1])
             left_c()
+            rember_post('QQ号无效', int(time.time()), qq_ned)
             mov(x, y)
     m3=matchImg('add.png')
     if m3==1:
@@ -447,6 +448,7 @@ def is_ok():
             x, y = pag.position()
             mov(m3[0], m3[1])
             left_c()
+            rember_post('QQ号无效', int(time.time()), qq_ned)
             mov(x, y)
     mov(xx,yy)
     return
@@ -492,7 +494,7 @@ def send_ad(qq_ned):
     win32api.keybd_event(13, 0, 0, 0)  # 回车
     time.sleep(0.1)
     win32api.keybd_event(13, 0, win32con.KEYEVENTF_KEYUP, 0)  # Realiz
-    is_ok()
+    is_ok(qq_ned)
     for i in range(1,5):
         move = matchImg('shout_down.png')
         if move==1:
